@@ -16,6 +16,24 @@ class Checkout extends Schema
      */
     protected function construct(): void
     {
+        $this->addPersonalFields();
+
+        $this->addAddressFields();
+
+        $this->addSettingsFields();
+
+        $this->addPaymentFields();
+    }
+
+
+    /**
+     * Fields related to customer personal infos
+     *
+     * @return void
+     */
+    protected function addPersonalFields(): void
+    {
+        /** @var Schema $this */
         $this->addField('firstName')
             ->setFieldLabel('First Name')
             ->isRequired();
@@ -34,7 +52,15 @@ class Checkout extends Schema
             ->setFieldLabel('Last Name', '(Optional)')
             ->setFieldPlaceholder('you@example.com')
             ->setFieldInvalidFeedback('Please enter a valid email address for shipping updates.');
+    }
 
+    /**
+     * Fields related to customer address
+     *
+     * @return void
+     */
+    protected function addAddressFields(): void
+    {
         $this->addField('address')
             ->setFieldLabel('Address')
             ->setFieldPlaceholder('1234 Main St')
@@ -57,21 +83,40 @@ class Checkout extends Schema
         $this->addField('zip')
             ->setFieldLabel('Zip')
             ->isRequired();
+    }
 
+    /**
+     * Add fields related to settings and preferences
+     *
+     * @return void
+     */
+    protected function addSettingsFields(): void
+    {
         $this->addField('sameAddress')
             ->setFieldLabel('Shipping address is the same as my billing address');
 
         $this->addField('saveInfo')
             ->setFieldLabel('Save this information for next time');
+    }
 
-        $this->addField('paymentMethod', [
-            'value' => 'credit',
-            'options' => [
-                [ 'value' => 'credit', 'label' => 'Credit card'],
-                [ 'value' => 'debit', 'label' => 'Debit card'],
-                [ 'value' => 'paypal', 'label' => 'PayPal'],
+    /**
+     * Configure fields related to payment control
+     *
+     * @return void
+     */
+    protected function addPaymentFields(): void
+    {
+        $this->addField(
+            'paymentMethod',
+            [
+                'value' => 'credit',
+                'options' => [
+                    ['value' => 'credit', 'label' => 'Credit card'],
+                    ['value' => 'debit', 'label' => 'Debit card'],
+                    ['value' => 'paypal', 'label' => 'PayPal'],
+                ]
             ]
-        ]);
+        );
 
         $this->addField('creditCardName')
             ->setFieldLabel('Name on card')
