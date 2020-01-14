@@ -20,33 +20,59 @@ class Engine implements EngineInterface
     protected string $path;
 
     /**
+     * @var string
+     */
+    protected string $ui;
+
+    /**
      * Engine constructor.
      *
-     * @param string $dir
+     * @param string $path
+     * @param string $ui
      */
-    public function __construct(string $dir)
+    public function __construct(string $path, string $ui)
     {
-        $this->path = $dir;
+        $this->path = $path;
+        $this->ui = $ui;
     }
 
     /**
      * @inheritDoc
      */
-    public function render(string $view, array $values = []): string
+    final public function includes(string $view, array $values = []): void
+    {
+        echo $this->render($view, $values);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    final public function render(string $template, array $values = []): string
+    {
+        return $this->compile("{$this->path}/{$this->ui}/{$template}", $values);
+    }
+
+    /**
+     * @inheritDoc
+     */
+    final public function view(string $template, array $values = []): void
+    {
+        echo $this->compile("{$this->path}/{$template}", $values);
+    }
+
+    /**
+     * @param string $file
+     * @param array $values
+     *
+     * @return false|string
+     */
+    private function compile(string $file, array $values)
     {
         ob_start();
         extract($values, EXTR_OVERWRITE);
         /** @noinspection PhpIncludeInspection */
-        include "{$this->path}/{$view}";
+        include $file;
         return ob_get_clean();
-    }
-
-    /**
-     * @inheritDoc
-     */
-    public function includes(string $view, array $values = []): void
-    {
-        echo $this->render($view, $values);
     }
 }
 

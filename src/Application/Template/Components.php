@@ -10,16 +10,11 @@ namespace App\Application\Template;
 trait Components
 {
     /**
-     * @var string
-     */
-    protected string $components = 'bootstrap';
-
-    /**
      * @param array $properties
      */
     public function input(array $properties = []): void
     {
-        $this->includes("{$this->components}/components/input.phtml", $properties);
+        $this->includes('components/input.phtml', $properties);
     }
 
     /**
@@ -27,7 +22,7 @@ trait Components
      */
     public function checkbox(array $properties = []): void
     {
-        $this->includes("{$this->components}/components/checkbox.phtml", $properties);
+        $this->includes('components/checkbox.phtml', $properties);
     }
 
     /**
@@ -35,7 +30,7 @@ trait Components
      */
     public function radio(array $properties = []): void
     {
-        $this->includes("{$this->components}/components/radio.phtml", $properties);
+        $this->includes('components/radio.phtml', $properties);
     }
 
     /**
@@ -43,6 +38,6 @@ trait Components
      */
     public function select(array $properties = []): void
     {
-        $this->includes("{$this->components}/components/select.phtml", $properties);
+        $this->includes('components/select.phtml', $properties);
     }
 }

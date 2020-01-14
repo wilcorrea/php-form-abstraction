@@ -16,6 +16,7 @@ return function (ContainerBuilder $containerBuilder) {
             ],
             'view' => [
                 'path' => __DIR__ . '/../resources/views',
+                'ui' => 'bootstrap',
             ],
         ],
     ]);

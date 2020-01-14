@@ -18,10 +18,16 @@ interface EngineInterface
     public function includes(string $view, array $values = []): void;
 
     /**
-     * @param string $view
+     * @param string $template
+     * @param array $values
+     */
+    public function view(string $template, array $values = []): void;
+
+    /**
+     * @param string $template
      * @param array $values
      *
      * @return string
      */
-    public function render(string $view, array $values = []): string;
+    public function render(string $template, array $values = []): string;
 }

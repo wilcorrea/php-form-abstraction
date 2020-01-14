@@ -2,8 +2,7 @@
     <?php echo $label ?? '' ?> <span class="text-muted"><?php echo $detail ?? '' ?></span>
 </label>
 <select
-  type="<?php echo $input ?? 'text' ?>"
-  class="custom-select d-block w-100 <?php echo $input ?? '' ?>"
+  class="custom-select d-block w-100 <?php echo $class ?? '' ?>"
   id="<?php echo $id ?? '' ?>"
   name="<?php echo $name ?? $id ?? '' ?>"
     <?php echo isset($required) ? 'required' : '' ?>

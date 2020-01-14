@@ -91,7 +91,11 @@
     </style>
     <!-- Custom styles for this template -->
     <link
-      href="script/form-validation.css"
+      href="bootstrap/style/form-validation.css"
+      rel="stylesheet"
+    >
+    <link
+      href="assets/style/grid.css"
       rel="stylesheet"
     >
 </head>
@@ -113,12 +117,17 @@
         </div>
 
         <div class="row">
-            <?php $this->includes('bootstrap/cart.phtml'); ?>
+            <div class="col-md-4 order-md-2 mb-4">
+                <?php $this->includes('cart.phtml'); ?>
+            </div>
 
-            <?php $this->includes('bootstrap/form.phtml', $checkout['fields']); ?>
+            <div class="col-md-8 order-md-1">
+                <h4 class="mb-3">Billing address</h4>
+                <?php $this->view('general/form.phtml', $checkout['fields']); ?>
+            </div>
         </div>
 
-        <?php $this->includes('bootstrap/footer.phtml'); ?>
+        <?php $this->includes('footer.phtml'); ?>
     </div>
     <script
       src="bootstrap/script/jquery-3.4.1.slim.min.js"

@@ -1,0 +1,203 @@
+*,
+*:before,
+*:after {
+    box-sizing: border-box;
+    font: 400 16px Arial;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+hr {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(1deg, rgba(0, 0, 0, 0.04), #dfdfdf, #dfdfdf, #dfdfdf, rgba(0, 0, 0, 0.04));
+}
+
+.form {
+    position: relative;
+    min-width: 260px;
+    width: 100%;
+}
+
+.form .field {
+    padding: 5px 10px 10px 10px;
+}
+
+.form.form-grid {
+    display: grid;
+    grid-template-columns: repeat(20, 5%);
+}
+
+.form.form-grid .field {
+    grid-column: auto/span 20;
+}
+
+.form.form-grid .field.width-5 {
+    grid-column: auto/span 1;
+}
+
+.form.form-grid .field.width-10 {
+    grid-column: auto/span 2;
+}
+
+.form.form-grid .field.width-15 {
+    grid-column: auto/span 3;
+}
+
+.form.form-grid .field.width-20 {
+    grid-column: auto/span 4;
+}
+
+.form.form-grid .field.width-25 {
+    grid-column: auto/span 5;
+}
+
+.form.form-grid .field.width-30 {
+    grid-column: auto/span 6;
+}
+
+.form.form-grid .field.width-35 {
+    grid-column: auto/span 7;
+}
+
+.form.form-grid .field.width-40 {
+    grid-column: auto/span 8;
+}
+
+.form.form-grid .field.width-45 {
+    grid-column: auto/span 9;
+}
+
+.form.form-grid .field.width-50 {
+    grid-column: auto/span 10;
+}
+
+.form.form-grid .field.width-55 {
+    grid-column: auto/span 11;
+}
+
+.form.form-grid .field.width-60 {
+    grid-column: auto/span 12;
+}
+
+.form.form-grid .field.width-65 {
+    grid-column: auto/span 13;
+}
+
+.form.form-grid .field.width-70 {
+    grid-column: auto/span 14;
+}
+
+.form.form-grid .field.width-75 {
+    grid-column: auto/span 15;
+}
+
+.form.form-grid .field.width-80 {
+    grid-column: auto/span 16;
+}
+
+.form.form-grid .field.width-85 {
+    grid-column: auto/span 17;
+}
+
+.form.form-grid .field.width-90 {
+    grid-column: auto/span 18;
+}
+
+.form.form-grid .field.width-95 {
+    grid-column: auto/span 19;
+}
+
+.form.form-grid .field.width-100 {
+    grid-column: auto/span 20;
+}
+
+.form.form-grid .field.height-1 {
+    grid-row: auto/span 1;
+}
+
+.form.form-grid .field.height-2 {
+    grid-row: auto/span 2;
+}
+
+.form.form-grid .field.height-3 {
+    grid-row: auto/span 3;
+}
+
+.form.form-grid .field.height-4 {
+    grid-row: auto/span 4;
+}
+
+.form.form-grid .field.height-5 {
+    grid-row: auto/span 5;
+}
+
+.form.form-grid .field.height-6 {
+    grid-row: auto/span 6;
+}
+
+.form.form-grid .field.height-7 {
+    grid-row: auto/span 7;
+}
+
+.form.form-grid .field.height-8 {
+    grid-row: auto/span 8;
+}
+
+.form.form-grid .field.height-9 {
+    grid-row: auto/span 9;
+}
+
+.form.form-grid .field.height-10 {
+    grid-row: auto/span 10;
+}
+
+.form.form-grid .field.height-11 {
+    grid-row: auto/span 11;
+}
+
+.form.form-grid .field.height-12 {
+    grid-row: auto/span 12;
+}
+
+.form.form-grid .field.height-13 {
+    grid-row: auto/span 13;
+}
+
+.form.form-grid .field.height-14 {
+    grid-row: auto/span 14;
+}
+
+.form.form-grid .field.height-15 {
+    grid-row: auto/span 15;
+}
+
+.form.form-grid .field.height-16 {
+    grid-row: auto/span 16;
+}
+
+.form.form-grid .field.height-17 {
+    grid-row: auto/span 17;
+}
+
+.form.form-grid .field.height-18 {
+    grid-row: auto/span 18;
+}
+
+.form.form-grid .field.height-19 {
+    grid-row: auto/span 19;
+}
+
+.form.form-grid .field.height-20 {
+    grid-row: auto/span 20;
+}
+
+@media (max-width: 700px) {
+    .form.form-grid:not(.no-break) .field:not(.no-break) {
+        grid-column: auto/span 20 !important;
+        grid-row: auto/span 1;
+    }
+}

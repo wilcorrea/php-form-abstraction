@@ -12,10 +12,10 @@ use Slim\App;
 use Slim\Interfaces\RouteCollectorProxyInterface as Group;
 
 return function (App $app) {
-    $app->get('/', function (Request $request, Response $response) {
+    $app->any('/', function (Request $request, Response $response) {
         /** @var Engine $view */
         $view = $this->get(EngineInterface::class);
-        $html = $view->render('bootstrap/index.phtml', ['checkout' => Checkout::provide()]);
+        $html = $view->render('index.phtml', ['checkout' => Checkout::provide()]);
         $response->getBody()->write($html);
         return $response;
     });

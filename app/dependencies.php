@@ -12,12 +12,12 @@ use Psr\Log\LoggerInterface;
 
 return function (ContainerBuilder $containerBuilder) {
     $containerBuilder->addDefinitions([
-        EngineInterface::class => function (ContainerInterface $container) {
+        EngineInterface::class => static function (ContainerInterface $container) {
             $settings = $container->get('settings');
             $viewSettings = $settings['view'];
-            return new Engine($viewSettings['path']);
+            return new Engine($viewSettings['path'], $viewSettings['ui']);
         },
-        LoggerInterface::class => function (ContainerInterface $c) {
+        LoggerInterface::class => static function (ContainerInterface $c) {
             $settings = $c->get('settings');
 
             $loggerSettings = $settings['logger'];

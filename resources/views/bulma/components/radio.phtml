@@ -1,0 +1,32 @@
+<?php
+
+if (!(isset($options) && is_array($options))) {
+    ?>
+    <mark>INVALID OPTIONS</mark>
+    <?php
+    return;
+}
+foreach ($options as $option) {
+    $__value = $option['value'] ?? '';
+    $__label = $option['label'] ?? '';
+    $__checked = isset($value) ? (string)$value === (string)$__value : false;
+    ?>
+    <div class="custom-control custom-radio">
+        <input
+          id="<?php echo $__value; ?>"
+          value="<?php echo $__value; ?>"
+          name="<?php echo $name ?? $id ?? '' ?>"
+          type="radio"
+          class="custom-control-input"
+            <?php echo $__checked ? 'checked' : ''; ?>
+            <?php echo isset($required) ? 'required' : '' ?>
+        >
+        <label
+          class="custom-control-label"
+          for="<?php echo $__value; ?>"
+        >
+            <?php echo $__label; ?>
+        </label>
+    </div>
+    <?php
+}

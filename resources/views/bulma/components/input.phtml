@@ -1,4 +1,4 @@
-<label for="<?php echo $id ?? '' ?>">
+<label class="label" for="<?php echo $id ?? '' ?>">
     <?php echo $label ?? '' ?> <span class="text-muted"><?php echo $detail ?? '' ?></span>
 </label>
 <div class="input-group">
@@ -12,8 +12,8 @@
     }
     ?>
     <input
-      type="<?php echo $type ?? 'text' ?>"
-      class="form-control <?php echo $class ?? '' ?>"
+      type="<?php echo $input ?? 'text' ?>"
+      class="<?php echo $input ?? 'input' ?>"
       id="<?php echo $id ?? '' ?>"
       name="<?php echo $name ?? $id ?? '' ?>"
       placeholder="<?php echo $placeholder ?? '' ?>"
@@ -30,10 +30,7 @@
         <?php
     }
     ?>
-    <div
-      class="invalid-feedback"
-      style="width: 100%;"
-    >
+    <div class="invalid-feedback help is-danger">
         <?php echo $invalidFeedback ?? 'Required field.' ?>
     </div>
 </div>
