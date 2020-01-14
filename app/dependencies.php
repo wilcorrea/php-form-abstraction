@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+use App\Application\Template\Engine;
+use App\Application\Template\EngineInterface;
 use DI\ContainerBuilder;
 use Monolog\Handler\StreamHandler;
 use Monolog\Logger;
@@ -10,6 +12,11 @@ use Psr\Log\LoggerInterface;
 
 return function (ContainerBuilder $containerBuilder) {
     $containerBuilder->addDefinitions([
+        EngineInterface::class => function (ContainerInterface $container) {
+            $settings = $container->get('settings');
+            $viewSettings = $settings['view'];
+            return new Engine($viewSettings['path']);
+        },
         LoggerInterface::class => function (ContainerInterface $c) {
             $settings = $c->get('settings');
 
