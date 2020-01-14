@@ -35,5 +35,13 @@ class Engine implements EngineInterface
         include "{$this->path}/{$view}";
         return ob_get_clean();
     }
+
+    /**
+     * @inheritDoc
+     */
+    public function includes(string $view, array $values = []): void
+    {
+        echo $this->render($view, $values);
+    }
 }
 
