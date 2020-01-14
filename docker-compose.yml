@@ -9,6 +9,7 @@ services:
     image: php:7.4-alpine
     working_dir: /var/www
     command: php -S 0.0.0.0:8080 -t public
+    container_name: ws-abstraction
     environment:
       docker: "true"
     ports:
