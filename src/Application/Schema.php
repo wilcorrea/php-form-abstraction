@@ -58,7 +58,7 @@ abstract class Schema
             'value' => '',
             'label' => '',
         ];
-        $this->fields[$id] = [...$default, ...$properties];
+        $this->fields[$id] = array_merge($default, $properties);
         return $this;
     }
 
