@@ -10,9 +10,14 @@ namespace App\Application\Template;
 class Engine implements EngineInterface
 {
     /**
+     * @trait
+     */
+    use Components;
+
+    /**
      * @var string
      */
-    protected $path;
+    protected string $path;
 
     /**
      * Engine constructor.

@@ -1,22 +1,39 @@
 <label for="<?php echo $id ?? '' ?>">
     <?php echo $label ?? '' ?> <span class="text-muted"><?php echo $detail ?? '' ?></span>
 </label>
-<input
-  type="<?php echo $input ?? 'text' ?>"
-  class="<?php echo $input ?? 'form-control' ?>"
-  id="<?php echo $id ?? '' ?>"
-  name="<?php echo $name ?? $id ?? '' ?>"
-  placeholder="<?php echo $placeholder ?? '' ?>"
-  value="<?php echo $value ?? '' ?>"
-    <?php echo isset($required) ? 'required' : '' ?>
->
-<?php
-if (isset($info)) {
-    ?>
-    <small class="text-muted"><?php echo $info; ?></small>
+<div class="input-group">
     <?php
-}
-?>
-<div class="invalid-feedback">
-    <?php echo $invalidFeedback ?? 'Required field.' ?>
+    if (isset($prepend)) {
+        ?>
+        <div class="input-group-prepend">
+            <span class="input-group-text"><?php echo $prepend ?></span>
+        </div>
+        <?php
+    }
+    ?>
+    <input
+      type="<?php echo $input ?? 'text' ?>"
+      class="<?php echo $input ?? 'form-control' ?>"
+      id="<?php echo $id ?? '' ?>"
+      name="<?php echo $name ?? $id ?? '' ?>"
+      placeholder="<?php echo $placeholder ?? '' ?>"
+      value="<?php echo $value ?? '' ?>"
+        <?php echo isset($required) ? 'required' : '' ?>
+    >
+    <?php
+    if (isset($info)) {
+        ?>
+        <small
+          class="text-muted"
+          style="display: block; width: 100%;"
+        ><?php echo $info; ?></small>
+        <?php
+    }
+    ?>
+    <div
+      class="invalid-feedback"
+      style="width: 100%;"
+    >
+        <?php echo $invalidFeedback ?? 'Required field.' ?>
+    </div>
 </div>

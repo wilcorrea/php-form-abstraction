@@ -13,12 +13,12 @@ abstract class Schema
     /**
      * @var array
      */
-    protected $fields = [];
+    protected array $fields = [];
 
     /**
      * @var string
      */
-    private $__current;
+    private string $__current;
 
     /**
      * Schema constructor.
@@ -58,7 +58,7 @@ abstract class Schema
             'value' => '',
             'label' => '',
         ];
-        $this->fields[$id] = array_merge($default, $properties);
+        $this->fields[$id] = [...$default, ...$properties];
         return $this;
     }
 

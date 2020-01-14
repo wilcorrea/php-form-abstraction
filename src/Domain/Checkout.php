@@ -58,10 +58,10 @@ class Checkout extends Schema
             ->setFieldLabel('Zip')
             ->isRequired();
 
-        $this->addField('same-address')
+        $this->addField('sameAddress')
             ->setFieldLabel('Shipping address is the same as my billing address');
 
-        $this->addField('save-info')
+        $this->addField('saveInfo')
             ->setFieldLabel('Save this information for next time');
 
         $this->addField('paymentMethod', [

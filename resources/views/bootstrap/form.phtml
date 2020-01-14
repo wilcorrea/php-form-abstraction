@@ -6,68 +6,68 @@
     >
         <div class="row">
             <div class="col-md-6 mb-3">
-                <?php $this->includes('bootstrap/components/input.phtml', $fields['firstName']); ?>
+                <?php $this->input($firstName); ?>
             </div>
 
             <div class="col-md-6 mb-3">
-                <?php $this->includes('bootstrap/components/input.phtml', $fields['lastName']); ?>
+                <?php $this->input($lastName); ?>
             </div>
         </div>
 
         <div class="mb-3">
-            <?php $this->includes('bootstrap/components/input-group.phtml', $fields['username']); ?>
+            <?php $this->input($username); ?>
         </div>
 
         <div class="mb-3">
-            <?php $this->includes('bootstrap/components/input.phtml', $fields['email']); ?>
+            <?php $this->input($email); ?>
         </div>
 
         <div class="mb-3">
-            <?php $this->includes('bootstrap/components/input.phtml', $fields['address']); ?>
+            <?php $this->input($address); ?>
         </div>
 
         <div class="mb-3">
-            <?php $this->includes('bootstrap/components/input.phtml', $fields['address2']); ?>
+            <?php $this->input($address2); ?>
         </div>
 
         <div class="row">
             <div class="col-md-5 mb-3">
-                <?php $this->includes('bootstrap/components/select.phtml', $fields['country']); ?>
+                <?php $this->select($country); ?>
             </div>
             <div class="col-md-4 mb-3">
-                <?php $this->includes('bootstrap/components/select.phtml', $fields['state']); ?>
+                <?php $this->select($state); ?>
             </div>
             <div class="col-md-3 mb-3">
-                <?php $this->includes('bootstrap/components/input.phtml', $fields['zip']); ?>
+                <?php $this->input($zip); ?>
             </div>
         </div>
 
         <hr class="mb-4">
 
-        <?php $this->includes('bootstrap/components/checkbox.phtml', $fields['same-address']); ?>
-        <?php $this->includes('bootstrap/components/checkbox.phtml', $fields['save-info']); ?>
+        <?php $this->checkbox($sameAddress); ?>
+        <?php $this->checkbox($saveInfo); ?>
 
         <hr class="mb-4">
 
         <h4 class="mb-3">Payment</h4>
         <div class="d-block my-3">
-            <?php $this->includes('bootstrap/components/radio.phtml', $fields['paymentMethod']); ?>
+            <?php $this->radio($paymentMethod); ?>
         </div>
 
         <div class="row">
             <div class="col-md-6 mb-3">
-                <?php $this->includes('bootstrap/components/input.phtml', $fields['creditCardName']); ?>
+                <?php $this->input($creditCardName); ?>
             </div>
             <div class="col-md-6 mb-3">
-                <?php $this->includes('bootstrap/components/input.phtml', $fields['creditCardNumber']); ?>
+                <?php $this->input($creditCardNumber); ?>
             </div>
         </div>
         <div class="row">
             <div class="col-md-3 mb-3">
-                <?php $this->includes('bootstrap/components/input.phtml', $fields['creditCardExpiration']); ?>
+                <?php $this->input($creditCardExpiration); ?>
             </div>
             <div class="col-md-3 mb-3">
-                <?php $this->includes('bootstrap/components/input.phtml', $fields['cvv']); ?>
+                <?php $this->input($cvv); ?>
             </div>
         </div>
         <hr class="mb-4">
