@@ -14,7 +14,7 @@ return function (App $app) {
     $app->get('/', function (Request $request, Response $response) {
         /** @var Engine $view */
         $view = $this->get(EngineInterface::class);
-        $html = $view->render('index.phtml', []);
+        $html = $view->render('bootstrap.phtml', []);
         $response->getBody()->write($html);
         return $response;
     });
