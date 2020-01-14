@@ -115,7 +115,7 @@
         <div class="row">
             <?php $this->includes('bootstrap/cart.phtml'); ?>
 
-            <?php $this->includes('bootstrap/form.phtml'); ?>
+            <?php $this->includes('bootstrap/form.phtml', ['fields' => $checkout['fields']]); ?>
         </div>
 
         <?php $this->includes('bootstrap/footer.phtml'); ?>

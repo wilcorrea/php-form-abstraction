@@ -1,0 +1,33 @@
+<label for="<?php echo $id ?? '' ?>">
+    <?php echo $label ?? '' ?> <span class="text-muted"><?php echo $detail ?? '' ?></span>
+</label>
+<select
+  type="<?php echo $input ?? 'text' ?>"
+  class="custom-select d-block w-100 <?php echo $input ?? '' ?>"
+  id="<?php echo $id ?? '' ?>"
+  name="<?php echo $name ?? $id ?? '' ?>"
+    <?php echo isset($required) ? 'required' : '' ?>
+>
+    <option value="">Choose...</option>
+    <?php
+    if (isset($options) && is_array($options)) {
+        foreach ($options as $option) {
+            $value = $option['value'] ?? '';
+            $label = $option['label'] ?? '';
+            ?>
+            <option value="<?php echo $value; ?>"><?php echo $label; ?></option>
+            <?php
+        }
+    }
+    ?>
+</select>
+<?php
+if (isset($info)) {
+    ?>
+    <small class="text-muted"><?php echo $info; ?></small>
+    <?php
+}
+?>
+<div class="invalid-feedback">
+    <?php echo $invalidFeedback ?? 'Please select a valid option.' ?>
+</div>
